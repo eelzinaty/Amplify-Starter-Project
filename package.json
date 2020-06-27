@@ -1,0 +1,30 @@
+{
+    "name": "amplify-starter-project",
+    "version": "1.0.0",
+    "description": "Amplify Starter Project",
+    "main": "index.js",
+    "scripts": {
+        "setup": "git remote set-url --push upstream DISABLED && npm i && npm run lint",
+        "lint": "eslint --fix . && echo 'Lint complete.'",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "graphdoc": "graphdoc --force -s ./amplify/backend/api/GraphQL/build/schema.graphql -o ./docs/graphql"
+    },
+    "author": "Issam Zinati",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "6.11.0",
+        "eslint-plugin-prettier": "^3.1.3",
+        "prettier": "^2.0.5",
+        "husky": "^4.2.5",
+        "@2fd/graphdoc": "^2.4.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint"
+        }
+    },
+    "dependencies": {
+        "aws-amplify": "^1.1.28"
+    }
+}
