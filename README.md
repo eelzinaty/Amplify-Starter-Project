@@ -1,0 +1,2 @@
+Amplify Starter Project
+---
