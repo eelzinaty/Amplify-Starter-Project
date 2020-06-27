@@ -1,0 +1,20 @@
+type TodoItems @model 
+@key(fields: ["userId", "dueDate"], name:"ByUserByDate", queryField:"ByUserByDate")
+{
+	# Main model keys (Values auto generated)
+	id: ID
+	createdAt: String
+	# Query Key
+	userId: String!
+	dueDate: AWSDate!
+	status: ItemStatus!
+	# Data
+	title: String!
+	content: String
+}
+
+enum ItemStatus {
+	Added
+	Canceled
+	Done
+}
